@@ -12,11 +12,12 @@ export class AppComponent {
   // Création d'un observable
   // sub = subscriber
   observable = new Observable((sub) => {
-    sub.next(1);
+    sub.next(Math.random());
   });
 
   constructor() {
     // souscrire à l'observable
-    this.observable.subscribe((data) => console.log(data));
+    this.observable.subscribe((data) => console.log(data, '1er'));
+    this.observable.subscribe((data) => console.log(data, '2nd'));
   }
 }
